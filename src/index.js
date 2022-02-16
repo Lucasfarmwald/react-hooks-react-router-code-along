@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter, Route} from "react-router-dom"
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 
 function Home() {
   return (
@@ -39,9 +39,17 @@ function Login() {
 
 function App() {
   return (
-    <Route path="/">
+    <Switch>
+    <Route path="/about">
+  <About />
+    </Route>
+    <Route path="/login">
+  <Login />  
+    </Route>
+    <Route exact path="/">
   <Home />
-  </Route>
+    </Route>  
+    </Switch>
 
   )
 }
